@@ -27,3 +27,16 @@ img {
   }
 
 }
+
+.widthSet {
+  max-width: 350px;
+}
+
+.heightSet {
+  max-height: 350px;
+}
+
+.bg-primary {
+  background-color: #293C50;
+}
+

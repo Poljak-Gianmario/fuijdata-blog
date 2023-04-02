@@ -1,6 +1,7 @@
 import {useState, useEffect} from "react"
 import client from "../client"
 import { Link } from "react-router-dom";
+import Footer from "../components/Footer";
 
 export default function Blog() {
     const [posts,setPosts] = useState([])
@@ -24,6 +25,10 @@ export default function Blog() {
     }, [])
 
     return (
+
+        <div>
+
+     
         <section className="px-5 xl:max-w-7xl 2xl:mx-auto">
 
             <h1 className="font-bold text-4xl mt-5 mb-10 tracking-widest text-centere md:text-6xl"> Blog </h1>
@@ -44,8 +49,12 @@ export default function Blog() {
                     </article>
                 ))}
             </div>
-
         </section>
+        <Footer/>
+
+        </div>
+  
+        
     )
 
     

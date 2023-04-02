@@ -1,5 +1,5 @@
 import { Link }  from "react-router-dom";
-
+import Footer from "./Footer";
 export default function Header() {
     return (
         <>
@@ -27,6 +27,9 @@ export default function Header() {
                     </ul>
                 </nav>
             </header>
+
         </>
+
+        
     )
 }

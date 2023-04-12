@@ -4,17 +4,18 @@ import Homepage from "./pages/Homepage"
 import Blog from "./pages/Blog"
 import SinglePost from "./pages/SinglePost"
 import Error from "./pages/Error"
+import Navbar from "./components/Navbar"
 
 function App() {
 
   return (
     <BrowserRouter>
-      <Header/>
+      <Navbar/>
       <Routes>
 
-        <Route path="/" element={<Homepage/>}exact/>
+        <Route path="/home" element={<Homepage/>}exact/>
 
-        <Route path="/blog/:slug" element={<SinglePost/>}/> #in caso di errori rivedere min 39
+        <Route path="/blog/:slug" element={<SinglePost/>}/> 
 
         <Route path="/blog" element={<Blog/>}/>
 

@@ -2,6 +2,7 @@ import {useState, useEffect} from "react"
 import {Link, useParams} from "react-router-dom"
 import client from "../client"
 import BlockContent from "@sanity/block-content-to-react"
+import DWChart from 'react-datawrapper-chart'
 
 export default function Singlepage() {
 
@@ -32,9 +33,13 @@ export default function Singlepage() {
         <>
         {
         isLoading ? <h1> Loading...</h1>:
-            <section className="px-5 xl:max-w-6xl xl:mx-auto">
-                <h1 className="uppercase font-bold text-4xl tracking-wide mb-5 md:text-6xl lg:text-8xl
-                text-center mt-5">{singlePost.title}</h1>
+
+            <section className="px-5 xl:max-w-6xl xl:mx-auto bg-primary-content p.solid {border-style: solid;}">
+
+                <h1 className="uppercase body-1  text-4xl tracking-wide mb-5 md:text-6xl lg:text-8xl
+                text-center mt-5 text-neutral-focus "> {singlePost.title}
+                </h1>
+
                 {singlePost.mainImage && singlePost.mainImage.asset && (
                                     <img src = {singlePost.mainImage.asset.url} alt={singlePost.title}
                                     title={singlePost.title}
@@ -44,9 +49,9 @@ export default function Singlepage() {
 
                 <p> By Poljak Gianmario </p>
 
-                <div className="block__content">
+                <div className="block__content body-1 bg-primary-content">
                     
-                   
+
                     <BlockContent
 
                     blocks={singlePost.body}
@@ -55,7 +60,8 @@ export default function Singlepage() {
                     dataset="production"
                 
                     />
-                   
+
+
 
                 </div>
 

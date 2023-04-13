@@ -2,7 +2,7 @@ import {useState, useEffect} from "react"
 import {Link, useParams} from "react-router-dom"
 import client from "../client"
 import BlockContent from "@sanity/block-content-to-react"
-import DWChart from 'react-datawrapper-chart'
+import DWChart from "react-datawrapper-chart"
 
 export default function Singlepage() {
 
@@ -27,7 +27,7 @@ export default function Singlepage() {
         setIsLoading(false)
     }, [slug])
 
- 
+ console.log(singlePost.body)
     
         return(
         <>
@@ -51,10 +51,15 @@ export default function Singlepage() {
 
                 <div className="block__content body-1 bg-primary-content">
                     
+                <DWChart title="Map" src="//datawrapper.dwcdn.net/ytKjO/1/" />
+            
+
 
                     <BlockContent
 
-                    blocks={singlePost.body}
+                        blocks={singlePost.body}
+
+
                            
                     projectId="xwaa9bgu"
                     dataset="production"

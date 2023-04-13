@@ -54,6 +54,7 @@ export default defineType({
             ],
           },
         ],
+        
       },
     }),
     // You can add additional types here. Note that you can't use

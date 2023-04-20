@@ -48,7 +48,7 @@ export default defineType({
       name: 'body',
       title: 'Body',
       type: 'blockContent',
-    }),
+    }),    
   ],
 
   preview: {
@@ -56,6 +56,7 @@ export default defineType({
       title: 'title',
       author: 'author.name',
       media: 'mainImage',
+
     },
     prepare(selection) {
       const {author} = selection

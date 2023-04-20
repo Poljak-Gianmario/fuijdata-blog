@@ -3,6 +3,7 @@ import {Link, useParams} from "react-router-dom"
 import client from "../client"
 import BlockContent from "@sanity/block-content-to-react"
 import DWChart from "react-datawrapper-chart"
+import { PortableText } from '@portabletext/react'
 
 export default function Singlepage() {
 
@@ -53,21 +54,12 @@ export default function Singlepage() {
                     
                 <DWChart title="Map" src="//datawrapper.dwcdn.net/ytKjO/1/" />
             
-
-
                     <BlockContent
-
                         blocks={singlePost.body}
-
-
-                           
-                    projectId="xwaa9bgu"
-                    dataset="production"
-                
+                                      
+                        projectId="xwaa9bgu"
+                        dataset="production"
                     />
-
-
-
                 </div>
 
                 <button>

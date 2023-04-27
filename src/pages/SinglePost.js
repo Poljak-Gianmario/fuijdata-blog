@@ -2,8 +2,7 @@ import {useState, useEffect} from "react"
 import {Link, useParams} from "react-router-dom"
 import client from "../client"
 import BlockContent from "@sanity/block-content-to-react"
-import DWChart from "react-datawrapper-chart"
-import { PortableText } from '@portabletext/react'
+import {PortableText} from '@portabletext/react'
 
 export default function Singlepage() {
 
@@ -24,9 +23,20 @@ export default function Singlepage() {
                     alt
                 }
             }`
+
         ).then((data) => setSinglePost (data[0]))
         setIsLoading(false)
     }, [slug])
+
+    const serializers = {
+        types: {
+          code: (props) => (
+            <pre data-language={props.node.language}>
+              <code>{props.node.code}</code>
+            </pre>
+          ),
+        },
+      }
 
  console.log(singlePost.body)
     
@@ -50,16 +60,21 @@ export default function Singlepage() {
 
                 <p> By Poljak Gianmario </p>
 
+                
+
                 <div className="block__content body-1 bg-primary-content">
                     
-                <DWChart title="Map" src="//datawrapper.dwcdn.net/ytKjO/1/" />
-            
+                    
                     <BlockContent
+
                         blocks={singlePost.body}
+                        
+
                                       
                         projectId="xwaa9bgu"
                         dataset="production"
                     />
+                    
                 </div>
 
                 <button>
